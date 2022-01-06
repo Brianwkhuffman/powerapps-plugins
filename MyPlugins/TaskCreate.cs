@@ -8,7 +8,7 @@ using System.ServiceModel;
 
 namespace MyPlugins
 {
-    internal class TaskCreate : IPlugin
+    public class TaskCreate : IPlugin
     {
         public void Execute(IServiceProvider serviceProvider)
         {
