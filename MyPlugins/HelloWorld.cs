@@ -51,8 +51,7 @@ namespace MyPlugins
                     }
 
                     lastname = entity.Attributes["lastname"].ToString();
-                    entity.Attributes.Add("description", "Hello World, " + firstname + " " + lastname);
-                    entity.Attributes.Add("emailaddress1", firstname + lastname + "@email.com");
+                    entity.Attributes.Add("description", "Hello World, my name is " + firstname + " " + lastname);
                 }
 
                 catch (FaultException<OrganizationServiceFault> ex)
