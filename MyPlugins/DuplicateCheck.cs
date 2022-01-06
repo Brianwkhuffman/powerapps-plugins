@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Xrm.Sdk;
 using System.ServiceModel;
+using Microsoft.Xrm.Sdk.Query;
 
 namespace MyPlugins
 {
@@ -35,11 +36,42 @@ namespace MyPlugins
                 context.InputParameters["Target"] is Entity)
             {
                 // Obtain the target entity from the input parameters.  
-                Entity entity = (Entity)context.InputParameters["Target"];
+                Entity contact = (Entity)context.InputParameters["Target"];
 
                 try
                 {
                     // Plug-in business logic goes here.
+                    string email = string.Empty;
+                    bool hasEmail = contact.Attributes.Contains("emailaddress1");
+
+                    if (hasEmail)
+                    {
+                        email = contact.Attributes["emailaddress1"].ToString();
+                        
+                        // [select *] [from contact] [where emailaddress1 == 'email']
+
+                        //from contact (2)
+                        QueryExpression query = new QueryExpression("contact");
+
+                        //select emailaddress1 (1)
+                        query.ColumnSet = new ColumnSet(new string[] { "emailaddress1" });
+                        //query.ColumnSet = new ColumnSet(true) -> select *
+
+                        //where emailadress1 == email (3)
+                        query.Criteria.AddCondition("emailaddress1", ConditionOperator.Equal, email);
+
+                        EntityCollection collection = service.RetrieveMultiple(query);
+
+                        if (collection.Entities.Count > 0)
+                        {
+                            throw new InvalidPluginExecutionException("Contact with email already exists");
+                        }
+                    }
+
+
+
+
+
                 }
 
                 catch (FaultException<OrganizationServiceFault> ex)
