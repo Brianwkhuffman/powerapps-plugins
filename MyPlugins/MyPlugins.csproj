@@ -93,6 +93,7 @@
     <Compile Include="DuplicateCheck.cs" />
     <Compile Include="HelloWorld.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RevenueRoundoff.cs" />
     <Compile Include="TaskCreate.cs" />
   </ItemGroup>
   <ItemGroup>
