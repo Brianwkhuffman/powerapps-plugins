@@ -41,6 +41,12 @@ namespace MyPlugins
                 try
                 {
                     // Plug-in business logic goes here.
+                    tracingService.Trace("This is the context depth: " + context.Depth.ToString());
+                    if (context.Depth > 1)
+                    {
+                        return;
+                    }
+
                     if (account.Attributes["revenue"] != null)
                     {
                         decimal revenue = ((Money)account.Attributes["revenue"]).Value;
