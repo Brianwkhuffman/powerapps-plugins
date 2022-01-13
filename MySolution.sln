@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyPlugins", "MyPlugins\MyPlugins.csproj", "{0A947252-F02C-4DAD-9781-6BB18C0F35C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCustomWorkflows", "MyCustomWorkflows\MyCustomWorkflows.csproj", "{D8B23A9E-0113-45DF-BC89-1D6FC2F51700}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0A947252-F02C-4DAD-9781-6BB18C0F35C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0A947252-F02C-4DAD-9781-6BB18C0F35C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0A947252-F02C-4DAD-9781-6BB18C0F35C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8B23A9E-0113-45DF-BC89-1D6FC2F51700}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8B23A9E-0113-45DF-BC89-1D6FC2F51700}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8B23A9E-0113-45DF-BC89-1D6FC2F51700}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8B23A9E-0113-45DF-BC89-1D6FC2F51700}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
